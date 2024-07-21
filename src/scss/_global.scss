@@ -3,16 +3,27 @@
   --color-black: #1F1F1F;
   --color-white: #F1F1F1;
   --color-gray: #515151;
+  --color-rose: #D7C0B4;
+  --color-kor: #452D2D;
+  --index: calc(1vw + 1vh);
 }
 
 //--------------------------------------------------------------------------\\
 
+// Для разработки подсветка
+// * {
+//   outline: 4px solid green !important;
+// }
+
 html {
   scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
 }
 
 body {
-  background-color: var(--color-gray);
+  background-color: var(--color-rose);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper {
@@ -22,9 +33,10 @@ body {
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1320px;
   height: 100%;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .visually-hidden {

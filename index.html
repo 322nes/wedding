@@ -3,22 +3,209 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="./public/images/icon/N.svg" />
+  <link rel="icon" type="image/svg+xml" href="./images/icon/N.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Шаблон сайта</title>
   <script type="module" src="./src/js/index.js"></script>
+  <script type="module" src="./src/js/formMaska.js"></script>
 </head>
 
 <body>
   <div class="wrapper">
-    git@github.com:322nes/wedding.git
-    <header class="header"></header>
 
-    <main class="main">ЗДЕСЬ ВСЕ РАБОТАЕТ</main>
+    <div class="preloader" id="loader">
+      <span class="loader"></span>
+    </div>
 
-    <footer class="footer"></footer>
+    <header class="header">
+      <div class="header__inner container">
+        <div class="header__content">
+          <h1 class="header__label">
+            <p>Артём</p>
+            <p>Варвара</p>
+          </h1>
+          <a class="header__button" href="#form">
+            Заполнить анкету
+          </a>
+        </div>
+        <div class="header__images">
+        </div>
+      </div>
+    </header>
 
+    <main class="main">
+
+      <section class="section timer container">
+        <div class="timer__wrapper">
+          <h2 class="timer__title">Дорогие друзья и родные!</h2>
+          <p class="timer__subtitle">Мы напоминаем, что до события осталось:</p>
+          <div class="timer__inner" id="countdown">
+            <div class="timer__item">
+              <h2 class="timer__item--number animation" id="days"></h2>
+              <small>Дней</small>
+            </div>
+            <div class="timer__item">
+              <h2 class="timer__item--number animation" id="hours"></h2>
+              <small>Часов</small>
+            </div>
+            <div class="timer__item">
+              <h2 class="timer__item--number animation" id="minutes"></h2>
+              <small>Минут</small>
+            </div>
+            <div class="timer__item">
+              <h2 class="timer__item--number animation" id="seconds"></h2>
+              <small>Секунд</small>
+            </div>
+          </div>
+          <h3 class="timer__subtitle">Хотим немного рассказать вам, как всё будет:</h3>
+        </div>
+      </section>
+
+      <section class="section days">
+        <div class="days__wrapper container">
+          <div class="days__first">
+            <h2 class="days__first-label animation">День первый:</h2>
+            <div class="days__first-list">
+              <p class="animation"><span>15:00</span> Встреча и размещение гостей</p>
+              <p class="animation"><span>16:00</span> Торжественная церемония</p>
+              <p class="animation"><span>17:00</span> Начало банкета</p>
+              <p class="animation"><span>23:00</span> Конец банкета</p>
+            </div>
+            <p class="days__first-text animation">
+              Цветовая палитра вечера:
+            </p>
+            <div class="days__first-color">
+              <div class="days__first-color--item animation"></div>
+              <div class="days__first-color--item animation"></div>
+              <div class="days__first-color--item animation"></div>
+              <div class="days__first-color--item animation"></div>
+              <div class="days__first-color--item animation"></div>
+            </div>
+          </div>
+          <div class="days__second">
+            <h2 class="days__second-label animation">День второй:</h2>
+            <div class="days__second-list">
+              <p class="animation"><span>10:00</span> Подъем, завтрак, пиво</p>
+              <p class="animation"><span>12:00</span> Баня и бассейн</p>
+              <p class="animation"><span>15:00</span> Присядем, обед, водка</p>
+              <p class="animation"><span>20:00</span> Разъезжаемся, но отмечать не перестаем!</p>
+            </div>
+            <h3 class="days__second-text">
+              Дресс-код свободный.
+              <br>При себе иметь: купальные и банные принадлежности, желание пить и веселиться!
+            </h3>
+          </div>
+          <div class="days__present">
+            <h2 class="days__present-label">И насчет подарков..</h2>
+            <div>
+              <p class="days__present-text">
+                С радостью примем вклад в нашу маленькую двухкомнатную мечту.
+                <br>Мы очень любим цветы, но, к сожалению, не сможем сохранить их до конца вечера.
+                <br>Будем рады альтернативе в виде вина или шампанского — это даст нам ещё один повод встретиться
+              </p>
+              <img class="days__present-img animation" src="./images/3.jpg" alt="" width="600">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section form container">
+        <h2 class="form__title">Просим Вас заполнить форму:</h2>
+        <form class="form__wrapper" id="form">
+          <div>
+            <div>
+              <label class="form__label red" for="fullname">Фамилия Имя:</label>
+              <input class="form__input" type="text" name="fullname" id="fullname" placeholder="Иванов Иван"
+                autocomplete="given-name" required>
+            </div>
+            <div>
+              <label class="form__label red" for="phone">Телефон:</label>
+              <input class="form__input" type="tel" name="phone" id="phone" placeholder="+7 (999) 999-99-99"
+                autocomplete="tel" minlength="17" maxlength="18" required data-tel-input>
+            </div>
+          </div>
+          <div>
+            <label class="form__label red">Будете ли на свадьбе?</label>
+            <label class="form__label custom-radio"><input class="hidden-radio" type="radio" name="attendance"
+                value="Да" required><span class="radiomark"></span> Да</label>
+            <label class="form__label custom-radio"><input class="hidden-radio" type="radio" name="attendance"
+                value="Нет" checked><span class="radiomark"></span> Нет</label>
+          </div>
+          <div>
+            <label class="form__label">Сколько Вас человек?</label>
+            <label class="form__label custom-radio"><input class="hidden-radio" type="radio" name="guests" value="1"
+                required checked><span class="radiomark"></span> 1</label>
+            <label class="form__label custom-radio"><input class="hidden-radio" type="radio" name="guests"
+                value="2"><span class="radiomark"></span> 2</label>
+            <label class="form__label custom-radio"><input class="hidden-radio" type="radio" name="guests"
+                value="3"><span class="radiomark"></span> 3</label>
+            <label class="form__label custom-radio"><input class="hidden-radio" type="radio" name="guests"
+                value="4"><span class="radiomark"></span> 4</label>
+            <label class="form__label custom-radio"><input class="hidden-radio" type="radio" name="guests"
+                value="5"><span class="radiomark"></span> 5</label>
+          </div>
+          <div>
+            <label class="form__label">Остаётесь на второй день?</label>
+            <label class="form__label custom-radio"><input class="hidden-radio" type="radio" name="stay" value="Да"
+                required><span class="radiomark"></span> Да</label>
+            <label class="form__label custom-radio"><input class="hidden-radio" type="radio" name="stay" value="Нет"
+                checked><span class="radiomark"></span> Нет</label>
+          </div>
+          <div id="sleeping_place" class="hidden">
+            <label class="form__label">Нужно ли спальное место?</label>
+            <label class="form__label custom-radio"><input class="hidden-radio" type="radio" name="sleeping_place"
+                value="Да" required><span class="radiomark"></span> Да</label>
+            <label class="form__label custom-radio"><input class="hidden-radio" type="radio" name="sleeping_place"
+                value="Нет" checked><span class="radiomark"></span> Нет</label>
+          </div>
+          <div>
+            <button class="form__btn" type="submit" class="submit">Отправить</button>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <aside class="aside">
+      <div class="audioplay paused">
+        <p class="audioplay__label">play music</p>
+        <div class="audioplay__list">
+          <div class="audioplay__item"></div>
+          <div class="audioplay__item"></div>
+          <div class="audioplay__item"></div>
+          <div class="audioplay__item"></div>
+          <div class="audioplay__item"></div>
+        </div>
+        <audio class="audioplay__audio" src="./audio/ludovico.mp3" loop></audio>
+      </div>
+    </aside>
+
+    <footer class="footer">
+      <div class="footer__wrapper container">
+        <h2 class="footer__label">Дата и место остается прежним:</h2>
+        <div class="footer__inner">
+          <div>
+            <p class="footer__title">Дата проведения:</p>
+            <p class="footer__subtitle animation">09.09.2024</p>
+            <p class="footer__title">Место проведения:</p>
+            <p class="footer__subtitle animation link"><a href="https://yandex.ru/maps/-/CDqVEO1Z" target="_blank">г.
+                Москва, пос.
+                Новобутаково, дом 44</a>
+            </p>
+          </div>
+          <div class="footer__map" id="map"></div>
+        </div>
+        <div class="footer__contact">
+          <p>Контакты:</p>
+          <p class="animation">Варвара <a href="tel:+7(991)312-11-46">+7 (991) 312-11-46</a></p>
+          <p class="animation">Артём <a href="tel:+7(952)201-73-52">+7 (952) 201-73-52</a></p>
+          <p class="animation">Ведущий Денис <a href="tel:+7(985)477-20-14">+7 (985) 477-20-14</a></p>
+          <p>Мы Вас ждем!</p>
+        </div>
+      </div>
+    </footer>
   </div>
 </body>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU"></script>
 
 </html>

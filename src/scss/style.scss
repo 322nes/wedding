@@ -1,11 +1,12 @@
 @import 
-  'reset',
-  'fonts',
-  'mixins',
-  'media',
-  'global';
+  "reset",
+  "fonts",
+  "mixins",
+  "media",
+  "global";
 
 @import 
-  'blocks/header',
-  'blocks/main',
-  'blocks/footer';
+  "blocks/header",
+  "blocks/main",
+  "blocks/utils",
+  "blocks/footer";
